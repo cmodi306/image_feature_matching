@@ -2,6 +2,18 @@
 
 A beginner computer-vision project: run ORB and SIFT on one photo, then rotate, scale, blur and darken the photo and see how many feature matches each detector keeps. The result is a head-to-head scoreboard: who wins each condition.
 
+### Demo
+
+A region is cropped out of the original photo, rotated 90 degrees, and matched back against the full image. Each line joins a keypoint in the photo to the keypoint it was matched with in the crop.
+
+| Original | Cropped region |
+|----------|----------------|
+| <img src="f1.jpg" width="480"> | <img src="cropped_image.jpg" width="320"> |
+
+**Matches between the original and the rotated crop**
+
+<img src="matched_image.jpg" width="800">
+
 AKAZE and BRISK were in the original plan but are left out: in OpenCV 5 they are only in the `opencv-contrib-python` build (under `cv2.xfeatures2d`). They can be added later without changing the structure.
 
 **What you learn:** what keypoints and descriptors are, how matching works, and how invariant each detector is to rotation, scale, blur and brightness.
